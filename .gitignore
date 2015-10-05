@@ -1,3 +1,4 @@
+@@ -0,0 +1,43 @@
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -30,6 +31,9 @@ $RECYCLE.BIN/
 
 # Thumbnails
 ._*
+
+#remove file
+.class
 
 # Files that might appear on external disk
 .Spotlight-V100
