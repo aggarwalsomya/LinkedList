@@ -98,4 +98,48 @@ public class CreateLL {
 		temp.next = null;
 		return temp;
 	}
+	
+	public int findLen() {
+		int count = 0;
+		Node temp = new Node();
+		temp = start;
+		
+		while(temp != null) {
+			count ++;
+			temp = temp.next;
+		}
+		return count;
+	}
+	
+	public int findMid(){
+		Node temp = new Node();
+		Node mid = new Node();
+		int count = 0;
+		float midv = 0;
+		
+		temp = start;
+		mid = start;
+		
+		if(temp == null) {
+			return 0;
+		}
+		while(temp != null) {
+			
+			//count will store the length of the LL
+			count++;
+			
+			//update mid value according to the count
+			if(count %2 == 0){
+				midv = count/2;
+			}
+			else {
+				midv = count/2+1;
+				if(midv != 1)
+					mid = mid.next;
+			}
+			
+			temp = temp.next;
+		}
+		return mid.value;
+	}
 }
