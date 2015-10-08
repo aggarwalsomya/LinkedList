@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class CreateLL {
 	public Node start;
 
@@ -8,7 +5,8 @@ public class CreateLL {
 		this.start = start;
 	}
 
-	public void addElement(int val) {
+//It adds an element in the LL in the sorted order.
+	public Node addElement(int val) {
 		Node newNode = createANode(val);
 
 		// Linked list is empty
@@ -48,8 +46,10 @@ public class CreateLL {
 				}
 			}
 		}
+		return start;
 	}
 
+//Function for printing the LL
 	public void printLL() {
 		Node temp = new Node();
 		temp = start;
@@ -60,6 +60,7 @@ public class CreateLL {
 		}
 	}
 
+//Handles deletion of first node separately. Middle and end node deletion are handled together.
 	public void deleteElement(int val) {
 		Node temp = new Node();
 		temp = start;
@@ -92,6 +93,7 @@ public class CreateLL {
 		
 	}
 
+	//creates a new node with val
 	private Node createANode(int val) {
 		Node temp = new Node();
 		temp.value = val;
@@ -99,6 +101,7 @@ public class CreateLL {
 		return temp;
 	}
 	
+	//iterates the LL and returns the length of a LL assuming no loops.
 	public int findLen() {
 		int count = 0;
 		Node temp = new Node();
@@ -111,6 +114,13 @@ public class CreateLL {
 		return count;
 	}
 	
+	/*It find the middle element.
+	 Approach 1: Find the length in O(n) and then traverse till length/2.
+	 Problem is that LL traversal will happen twice here.
+	 
+	 Approach 2: Take two pointers, one will be a normal one to traverse a LL
+	 Other Pointer will always point to the half length to where first is pointing.
+	 Such that when 1 reaches end, 2 reaches mid of LL.*/
 	public int findMid(){
 		Node temp = new Node();
 		Node mid = new Node();
@@ -142,4 +152,5 @@ public class CreateLL {
 		}
 		return mid.value;
 	}
+
 }
