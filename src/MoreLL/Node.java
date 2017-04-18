@@ -1,0 +1,5 @@
+package MoreLL;
+public class Node {
+	public int value;
+	Node next;
+}
