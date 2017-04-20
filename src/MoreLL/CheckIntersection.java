@@ -44,6 +44,14 @@ public class CheckIntersection {
 	}
 	
 	//assuming that 2 LL intersect each other. Find the starting point where the LL intersection starts.
+	/**
+	 * Find the length of both the LL and check which one is longer.
+	 * If LL1 is longer by 2 nodes, move it ahead by 2 nodes.
+	 * Then keep moving both LL to next nodes and see where both nodes are equal.
+	 * That will be the starting point of intersection.
+	 * After that increment any one LL till null.
+	 * That will become the length of intersection.
+	 */
 	public Node findStartIntersectionPoint() {
 		//find the length of first LL
 		Node tfirst = first;

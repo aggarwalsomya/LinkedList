@@ -2,10 +2,10 @@ package MoreLL;
 public class PrintinReverse {
 	
 	public void printInReverse(Node node) {
-		if(node.next != null) {
+		if(node != null) {
 			printInReverse(node.next);
+			System.out.print(node.value+ " ");
 		}
-		System.out.print(node.value + " ");
 	}
 
 	public static void main(String args[]) {
